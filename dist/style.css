@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #ffffff;
+  color: #001F3F;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+body.dark {
+  background-color: #2b2b2b;
+  color: #ffffff;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.course,
+.job {
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eee;
+}
+.course:last-child,
+.job:last-child {
+  border-bottom: none;
+}
+section {
+  background: #e8e8e8;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+section h2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #929292;
+  transition: color 0.3s ease;
+}
+
+section h2::after {
+  content: "▼";
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+section h2.active::after {
+  transform: rotate(-180deg);
+}
+
+section,
+header,
+footer,
+button {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark header,
+body.dark footer,
+body.dark section {
+  background-color: #3d3a3a;
+  color: white;
+}
+
+.collapse-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.collapse-content.open {
+  max-height: 500px;
+  opacity: 1;
+  margin-top: 10px;
+}
+body.dark button {
+  background-color: #555;
+  color: white;
+}
+
+button {
+  background-color: #e8e8e8;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+header {
+  background: linear-gradient(135deg, #4b2c78, #19171e);
+  padding: 40px 20px;
+  text-align: center;
+  color: white;
+}
+
+header img {
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+  margin-top: 15px;
+  font-size: 2.2rem;
+  letter-spacing: 0.5px;
+}
+
+nav.socials {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+nav.socials a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.4s ease;
+}
+
+nav.socials a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.content,
+main {
+  width: 90%;
+  max-width: 1000px;
+  margin: 25px auto;
+}
+
+article,
+aside ul li a {
+  background: #fafafa;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: 0.3s;
+}
+
+article:hover,
+aside ul li a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+aside {
+  background: none;
+  padding: 0;
+}
+
+aside ul li {
+  margin-bottom: 12px;
+}
+
+footer {
+  background: #4b2c78;
+  padding: 15px;
+  text-align: center;
+  color: white;
+  margin-top: auto;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  nav.socials {
+    flex-direction: column;
+  }
+}
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  outline: none;
+  border-color: #6d3ebc;
+}
+
+.contact button {
+  background-color: #6d3ebc;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact button:hover {
+  opacity: 0.85;
+}
